@@ -1,8 +1,8 @@
 @echo off
 
 :: Update the qt_dir as necessary
-set qt_dir=K:\Qt\Qt5.1.0\5.1.0\mingw48_32
-set qif_dir=K:\Qt\QtIFW-1.3.0\bin
+set qt_dir=C:\Qt\Qt5.1.0\5.1.0\mingw48_32
+set qif_dir=C:\Qt\QtIFW-1.3.0\bin
 set openssl_dir=C:\OpenSSL-Win32
 
 cd packages\pumpa\data
@@ -74,8 +74,7 @@ xcopy %openssl_dir%\ssleay32.dll
 xcopy %openssl_dir%\libssl32.dll
 xcopy %openssl_dir%\libeay32.dll
 
-xcopy ..\..\..\..\release\pumpa.exe
+xcopy ..\release\pumpa.exe
 
-cd ..\..\..\
 
 %qif_dir%\binarycreator.exe --offline-only --config config\config.xml --packages packages pumpa-installer.exe
